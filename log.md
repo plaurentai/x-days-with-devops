@@ -115,7 +115,162 @@ Small improvements like these play a significant role in strengthening the overa
 
 ---
 
-# Day XX - Title
+### Day 4 - Script Execution Permissions
+
+#### May 24, 2026
+
+---
+
+## Focus
+
+Granting executable permissions to the `/tmp/movedata.sh` script on the application server.
+
+## Scenario
+
+The system administrator developed a new Bash script named `movedata.sh` and distributed it across all application servers. However, the script lacked executable permissions on `raspberry-02`, preventing users from running it.
+
+---
+
+## Progress
+
+* Logged into `raspberry-02`
+* Checked the current permissions of the script:
+
+```bash
+ls -l movedata.sh
+---------- 1 root root 15 May 25 17:52 movedata.sh
+```
+
+* Attempted to execute the script:
+
+```bash
+./movedata.sh
+```
+
+Output:
+
+```bash
+bash: ./movedata.sh: Permission denied
+```
+
+* Updated the permissions so all users could read and execute the script:
+
+```bash
+sudo chmod a+rx movedata.sh
+```
+
+* Verified the updated permissions:
+
+```bash
+ls -l movedata.sh
+-r-xr-xr-x 1 root root 15 May 25 17:52 movedata.sh
+```
+
+* Executed the script successfully:
+
+```bash
+./movedata.sh
+```
+
+Output:
+
+```bash
+Move Data
+```
+
+---
+
+## Thoughts
+
+This was a short lesson, but an important one.
+
+It reinforced the idea that even if a script is written correctly, it still cannot run unless the operating system grants the proper permissions.
+
+Seeing the `Permission denied` error and resolving it by updating file permissions made the concept more memorable than simply reading about it. Exercises like this help connect Linux fundamentals with real-world system administration tasks.
+
+Understanding permissions is an essential skill because it affects security, automation, deployment, and day-to-day server operations.
+
+---
+
+## Key Takeaways
+
+* Linux controls access through **read (`r`)**, **write (`w`)**, and **execute (`x`)** permissions
+* A script requires the **execute** permission to run directly
+* `chmod` modifies file permissions
+* `a+rx` grants **read and execute permissions to all users**
+* Use `ls -l` to inspect current permissions
+* Permission errors are often quick to fix once you understand Linux permission models
+
+---
+
+## Work & Resources:
+
+* Practice additional `chmod` permission combinations
+* Learn numeric permissions (`755`, `644`, `700`)
+* Explore ownership using `chown` and `chgrp`
+
+
+---
+
+### Day 5 - Installing and Configuring Rocky Linux on Pi 4
+
+#### May 25, 2026
+
+---
+
+## Focus
+
+Today’s learning focused on installing and configuring a Linux distribution on the Raspberry Pi that closely aligns with the Red Hat ecosystem. I chose **Rocky Linux** to gain more exposure to enterprise-style Linux administration and workflows.
+
+## Progress
+
+- Downloaded **Balena Etcher** and used it to flash the SD card for the Raspberry Pi 4
+- Remotely logged into Rocky Linux
+- Changed the default password
+- Updated the operating system packages
+- Configured the hostname
+- Set the correct timezone
+- Configured networking (LAN and Wi-Fi)
+- Expanded the filesystem
+- Installed common system administration tools
+
+---
+
+## Thoughts
+
+Today was a valuable hands-on learning experience.
+
+One of my goals is to expose myself to different Linux distributions and administration styles. Running multiple Linux flavors in my home environment gives me broader practical experience and helps me become more comfortable adapting to different systems.
+
+Choosing **Rocky Linux** was intentional because it is closely aligned with **Red Hat Enterprise Linux (RHEL)**, which is widely used across enterprise environments. Working through the installation and configuration process gave me exposure to foundational Linux administration tasks that system administrators perform regularly.
+
+Another exciting part of this project is that I documented the entire setup process and plan to share it with a broader audience. Documenting and teaching what I learn helps reinforce concepts and build stronger operational habits.
+
+---
+
+## Key Takeaways
+
+- Installing Linux manually improves understanding of system setup and configuration
+- Enterprise Linux distributions share common administration workflows
+- Basic system configuration is an important operational skill
+- Documenting and sharing work strengthens learning and creates reusable references
+- Hands-on practice builds confidence faster than theory alone
+
+---
+
+## Work & Resources
+
+- Raspberry Pi 4
+- Rocky Linux
+- Balena Etcher
+- SSH remote access
+- Linux system administration tools
+
+![Rocky Linux Installation and configuration](resources/cli/linux/rockylinux.md)
+
+---
+
+### Day XX - Title
 
 #### Month Month XX, 2021
 
@@ -125,5 +280,6 @@ Small improvements like these play a significant role in strengthening the overa
 
 **Thoughts**:
 
-**Work & Resources:**::
+**Key Takeaways**
 
+**Work & Resources:**
