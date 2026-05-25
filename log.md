@@ -69,7 +69,51 @@ This approach improves security, reduces operational overhead, and helps enforce
 ![Useful commands](resources/cli/linux/bible.md)
 
 ---
+### Day 03 - Secure Root SSH Access
 
+#### May 23, 2026
+
+---
+
+## Focus
+
+Today’s learning focused on logging into multiple Linux servers and improving security by disabling direct root SSH access.
+
+## Progress
+
+- Logged into all application servers
+- Disabled direct root SSH access on each server
+- Reinforced Linux server access and security fundamentals
+
+---
+
+## Thoughts
+
+Today was a shorter learning session, but it covered an important security concept.
+
+One of the key lessons was understanding why direct root SSH access should be disabled whenever possible. Allowing remote root login increases the attack surface and can create unnecessary security risks. Restricting root access encourages the use of standard user accounts with privilege escalation when administrative actions are required.
+
+Although the task itself was straightforward, it reinforced the importance of following security best practices and building secure defaults into system administration workflows.
+
+Small improvements like these play a significant role in strengthening the overall security posture of Linux environments.
+
+---
+
+## Key Takeaways
+
+- Avoid allowing direct root SSH access
+- Use standard user accounts and elevate privileges only when necessary
+- Security hardening starts with simple configuration changes
+- Consistent security practices reduce operational risk
+
+---
+
+## Work & Resources
+
+![Useful commands](resources/cli/linux/bible.md)
+
+
+---
 
 # Day XX - Title
 
@@ -82,3 +126,4 @@ This approach improves security, reduces operational overhead, and helps enforce
 **Thoughts**:
 
 **Work & Resources:**::
+
